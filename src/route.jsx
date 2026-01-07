@@ -7,12 +7,19 @@ import Contact from './pages/Contect/Contact.jsx';
 import AuthLayout from "./Layouts/AuthLayout.jsx";
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
+import VerifyEmail from "./pages/VerifyEmail/VerifyEmail.jsx";
+import SendCode from "./pages/SendCode/SendCode.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children : [
+
+        {
+            path :'',
+            element:<h1>Wlecomee</h1>,
+        }, 
         {
             path :'home',
             element:<Home />,
@@ -25,13 +32,6 @@ const router = createBrowserRouter([
             path :'Contact',
             element:<Contact />,
         }, 
-    ]
-    
-  },
-    {
-    path: "/auth",
-    element: <AuthLayout />,
-    children : [
         {
             path :'login',
             element:<Login />,
@@ -40,6 +40,25 @@ const router = createBrowserRouter([
             path :'register',
             element:<Register />,
         }, 
+        {
+            path :'forget-password',
+            element:<VerifyEmail />,
+        }, 
+        {
+            path :'send-code',
+            element:<SendCode />,
+        }, 
+    ]
+    
+  },
+    {
+    path: "/auth",
+    element: <AuthLayout />,
+    children : [
+      {
+            path :'forget-password',
+            element:<VerifyEmail />,
+      }, 
     ]
     
   },
